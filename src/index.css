@@ -16,15 +16,29 @@ a {
   padding: 10px;
 }
 
-.btn {
-  text-transform: uppercase;
-  margin: 35px auto;
+.sign-in {
+  max-width: 450px;
+  margin: 0 auto;
   padding: 10px;
   border: 1px solid rgba(0,0,0,.29);
+}
+
+.btn {
+  text-transform: uppercase;
+  margin: 10px auto;
+  padding: 10px;
   cursor: pointer;
   background: #fff;
   font-size: 16px;
-  width: 250px;
+  width: 450px;
+  position: relative;
+}
+
+.user-select {
+  padding: 10px;
+  cursor: pointer;
+  background: #fff;
+  width: 450px;
   position: relative;
 }
 
