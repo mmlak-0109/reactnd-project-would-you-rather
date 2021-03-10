@@ -1,11 +1,44 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux'
 import { FaUserCircle } from "react-icons/fa";
+import { setAuthedUser } from "../actions/authedUser";
+import { Redirect } from "react-router";
 
 class SignIn extends Component {
+  state = {
+    selection: 'Select a User...',
+  }
+
+  handleChange = (e) => {
+    const selection = e.target.value
+
+    this.setState(() => ({
+      selection
+    }))
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+
+    const { selection } = this.state;
+    const { dispatch } = this.props;
+
+    dispatch(setAuthedUser(selection));
+
+    this.setState(() => ({
+      selection,
+    }))
+  }
+
   render() {
-    const { users } = this.props;
+    const { users, authedUser } = this.props;
+    const { selection } = this.state;
     console.log(users)
+
+    if (authedUser !== null) {
+      return <Redirect to='/' />
+    }
+
     return (
       <div className='container center'>
         <div className='sign-in'>
@@ -18,14 +51,21 @@ class SignIn extends Component {
             <h2>Sign In</h2>
           </div>
           <div>
-            <form>
-              <select className='user-select'>
+            <form onSubmit={this.handleSubmit}>
+              <select 
+                className='user-select'
+                value={selection}
+                onChange={this.handleChange}>
+                <option key='default'>Select a User...</option>
                 {users.map((user) => (
-                  <option id={user}>{user}</option>
+                  <option key={user}>{user}</option>
                 ))}
               </select>
+              <button 
+                className='btn'
+                type='submit'
+                disabled={selection === 'Select a User...'}>Sign In</button>
             </form>
-            <button className='btn'>Sign In</button>
           </div>
         </div>
       </div>
@@ -33,10 +73,11 @@ class SignIn extends Component {
   }
 };
 
-function mapStateToProps({ users }) {
+function mapStateToProps(state) {
   return {
-      users: Object.keys(users)
-  }
+      users: Object.keys(state.users),
+      authedUser: state.authedUser
+    }
 }
 
 export default connect(mapStateToProps)(SignIn);
