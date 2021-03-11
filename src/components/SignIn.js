@@ -36,7 +36,7 @@ class SignIn extends Component {
     console.log(users)
 
     if (authedUser !== null) {
-      return <Redirect to='/' />
+      return <Redirect to='/home' />
     }
 
     return (
