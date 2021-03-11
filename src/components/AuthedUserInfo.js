@@ -21,17 +21,25 @@ class AuthedUserInfo extends Component {
     }
     
     return (
-      <div>
-        <p>Hello, {user.name}</p>
-        <img 
-          src={user.avatarURL}
-          alt="User Avatar">
-        </img>
-        <a 
-          href='/sign-in'
-          onSubmit={this.handleSubmit}>
-            Logout
-        </a>
+      <div className='authed-user'>
+        <ul>
+          <li>
+            <span>Hello, {user.name} </span>
+          </li>
+          <li>
+            <img 
+              src={user.avatarURL}
+              alt="User Avatar">
+            </img>
+          </li>
+          <li>
+            <a 
+              href='/sign-in'
+              onSubmit={this.handleSubmit}>
+                Logout
+            </a>
+          </li>
+        </ul>
       </div>
     )
   }
