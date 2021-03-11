@@ -20,8 +20,11 @@ class App extends Component {
       <Router>
         <Fragment>
           <div className='container'>
-            <NavBar />
-            <AuthedUserInfo />
+            <div className='nav-authedUser'>
+              <NavBar />
+              <AuthedUserInfo />
+            </div>
+            {/* TODO: This switch statement isn't working on refresh... */}
             <Switch>
               <div>
                 <Route exact path='/' render={() => {
