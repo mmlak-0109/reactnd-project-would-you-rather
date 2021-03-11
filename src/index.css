@@ -61,6 +61,27 @@ a {
   font-weight: bold;
 }
 
+.nav-authedUser {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #00b5d6;
+}
+
+.authed-user {
+  width: 50%;
+}
+
+.authed-user ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.nav {
+  width: 50%;
+}
+
 .nav ul {
   display: flex;
   flex-direction: row;
