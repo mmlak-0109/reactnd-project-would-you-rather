@@ -16,15 +16,14 @@ class QuestionPreview extends Component {
 
     return (
       <div className='question'>
-        <div>
-          <h3>{name} asks:</h3>
-        </div>
         <img
           className='avatar'
           src={avatar}
           alt='User Avatar'
+          width='50%'
         />
         <div className='question-info'>
+          <h3>{name} asks:</h3>
           <h4>{title}</h4>
           <p>{text}...</p>
           <button className='btn'>View Question</button>
