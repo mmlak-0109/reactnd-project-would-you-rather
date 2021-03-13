@@ -8,11 +8,17 @@ class Home extends Component {
     this.state = {
     questionsToggle: 'unanswered'
     };
-    this.handleClick = this.handleClick.bind(this);
 }
 
   handleClick = (e) => {    
-    const questionsToggle = e.target.value;
+    e.preventDefault();
+
+    // e.target doesn't work in this case because the event 
+    // listener at target is attached to the lowest level <h3>
+    // However, the event listener at currentTaget is attached
+    // to button.  So "value" will be correctly assigned.
+    // https://stackoverflow.com/questions/10086427/what-is-the-exact-difference-between-currenttarget-property-and-target-property
+    const questionsToggle = e.currentTarget.value;
 
     this.setState(() => ({
       questionsToggle
@@ -26,7 +32,7 @@ class Home extends Component {
     console.log(questionsToggle)
     
     return (
-      <div>
+      <div className='container'>
         <div className='questions-list'>
           <div className='questions-toggle'>
             <button
@@ -43,7 +49,7 @@ class Home extends Component {
               type='button'
               value='answered'
               disabled={questionsToggle === 'answered'}
-              onClickCapture={this.handleClick}
+              onClick={this.handleClick}
             >
                 <h3>Answered Questions</h3>
             </button>
