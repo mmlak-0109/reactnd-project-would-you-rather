@@ -6,6 +6,7 @@ import NavBar from './NavBar';
 import SignIn from './SignIn';
 import AuthedUserInfo from './AuthedUserInfo';
 import Home from './Home';
+import NewQuestion from './NewQuestion';
 
 class App extends Component {
 
@@ -36,10 +37,10 @@ class App extends Component {
                 }} />
                 <Route path='/sign-in' exact component={SignIn} />
                 <Route path='/home' exact component={Home} />
-                {/* <Route path='/leaderboard' exact component={} />
-                <Route path='/new-question' exact component={} />
-                <Route path='/question/:id' exact component={} />
-                <Route path='/answer/:id' exact component={} /> */}
+                {/* <Route path='/leaderboard' exact component={} /> */}
+                <Route path='/new-question' exact component={NewQuestion} />
+                {/* <Route path='/question/:id' exact component={} /> */}
+                {/* <Route path='/answer/:id' exact component={} /> */}
               </div>
             </Switch>
           </div>
