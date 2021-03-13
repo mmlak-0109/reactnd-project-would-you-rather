@@ -20,12 +20,18 @@ a {
   max-width: 450px;
   margin: 0 auto;
   padding: 10px;
-  border: 1px solid rgba(0,0,0,.29);
+  border: 2px solid rgba(0,0,0,.29);
 }
 
 .questions-toggle-btn {
   width: 50%;
-} 
+}
+
+.questions-toggle-btn:disabled {
+  background: #00b5d6;
+  color: #252525;
+}
+
 .btn {
   /* text-transform: uppercase; */
   margin: 10px auto;
@@ -35,6 +41,10 @@ a {
   /* font-size: 16px; */
   position: relative;
   width: 100%;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
 }
 
 .user-select {
@@ -115,13 +125,13 @@ li {
 .questions-list {
   margin: 0 auto;
   padding: 10px;
-  border: 1px solid #dad7d7;
+  border: 2px solid #dad7d7;
   max-width: 600px;
 }
 
 .questions-toggle {
   padding: 10px;
-  border-bottom: 1px solid #dad7d7;;
+  border-bottom: 2px solid #dad7d7;;
 }
 
 .question {
@@ -130,7 +140,7 @@ li {
   padding: 10px;
   display: flex;
   margin: 0 auto;
-  border: 1px solid #dad7d7;
+  border: 2px solid #dad7d7;
   border-radius: 3px;
 }
 
@@ -138,67 +148,31 @@ li {
   margin: 10px;
   display: flex;
   flex-direction: column;
-}
-
-/* Hacky but less typing in the video */
-.question-info > div > span:first-child {
-  font-weight: bold;
-  margin-right: 5px;
-}
-.question-info > div > span:nth-child(2) {
-  color: #969696;
-  font-size: 16px;
-}
-.question-info > div > div {
-  color: #969696;
-  font-size: 15px;
-}
-.question-info > div > p {
-  font-size: 18px;
-  margin: 10px 0;
-}
-.question-icons {
-  display: flex;
-  align-items: center;
-}
-.question-icons > span {
-  color: #969696;
-  margin: 0 15px 0 5px;
-  font-size: 18px !important;
-}
-.question-icon {
-  font-size: 27px;
-  color: #697784;
-}
-.question-icon:hover {
-  color: #00b5d6;
-  cursor: pointer;
-}
-.replying-to {
-  border: none;
-  background: transparent;
-  margin: 0;
-  padding: 0;
-  color: #969696;
-  cursor: pointer;
-}
-
-.heart-button {
-  background: transparent;
-  border: none;
+  width: 75%;
 }
 
 .new-question {
   width: 100%;
   max-width: 590px;
   margin: 0 auto;
+  padding: 10px;
   display: flex;
   flex-direction: column;
+  border: 2px solid rgba(0,0,0,.29);
+}
+
+input {
+  padding: 10px;
+  cursor: auto;
+  background: #fff;
+  position: relative;
+  width: max-content;
+  width: 100%;
 }
 
 .textarea {
   border-radius: 4px;
-  border: 1px solid #dad7d7;
+  border: 2px solid #dad7d7;
   padding: 10px;
   font-size: 15px;
   height: 100px;
