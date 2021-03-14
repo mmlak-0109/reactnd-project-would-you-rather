@@ -28,7 +28,7 @@ class App extends Component {
             {/* TODO: This switch statement isn't working on refresh... */}
             <Switch>
               <div>
-                <Route exact path='/' render={() => {
+                <Route path='/' render={() => {
                   return (
                     authedUser === null
                       ? <Redirect to='/sign-in' />
