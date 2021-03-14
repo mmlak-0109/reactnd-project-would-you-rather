@@ -53,7 +53,9 @@ class NewQuestion extends Component {
 
     return (
       <div className='container'>
-        <div className='new-question center'>
+        <div 
+          className='new-question center'
+          id='header'>
           <h2>Create New Question</h2>
         </div>
         <div className='new-question'>
@@ -74,6 +76,7 @@ class NewQuestion extends Component {
             <button 
               className='btn'
               onSubmit={this.handleSubmit}
+              disabled={optionOne === '' || optionTwo === ''}
             >
               Submit
             </button>
