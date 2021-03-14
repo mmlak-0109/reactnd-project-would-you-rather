@@ -41,7 +41,7 @@ class SignIn extends Component {
 
     return (
       <div className='container center'>
-        <div className='sign-in'>
+        <div className='sign-in'  id='header'>
           <h3>Welcome to the Would you Rather App!</h3>
           <p>Please sign in to continue</p>
         </div>
