@@ -33,12 +33,9 @@ a {
 }
 
 .btn {
-  /* text-transform: uppercase; */
   margin: 10px auto;
   padding: 10px;
   cursor: pointer;
-  background: #fff;
-  /* font-size: 16px; */
   position: relative;
   width: 100%;
 }
@@ -55,11 +52,6 @@ a {
   position: relative;
 }
 
-.btn:hover {
-  border-color: rgba(0,0,0,.5);
-  text-decoration: none;
-}
-
 .btn:focus {
   outline: 0;
   font-weight: 700;
@@ -72,6 +64,7 @@ a {
 
 .active {
   font-weight: bold;
+  border-bottom: 2px solid #00b5d6;
 }
 
 .nav-authedUser {
@@ -161,13 +154,18 @@ li {
   border: 2px solid rgba(0,0,0,.29);
 }
 
+#header {
+  border-bottom: none;
+}
+
 input {
   padding: 10px;
   cursor: auto;
   background: #fff;
   position: relative;
-  width: max-content;
   width: 100%;
+  /* prevents overflow */
+  box-sizing: border-box; 
 }
 
 .textarea {
