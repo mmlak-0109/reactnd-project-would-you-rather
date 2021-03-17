@@ -36,7 +36,7 @@ class QuestionPreview extends Component {
 function mapStateToProps({ questions, users }, { id }) {
   const question = questions[id];
   const user = users[question.author];
-
+  
   return {
     question: question
       ? formatQuestionPreview(question, user)
