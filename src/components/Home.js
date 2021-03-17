@@ -29,7 +29,6 @@ class Home extends Component {
   render() {
     const { unansweredQuestionsIds, answeredQuestionsIds } = this.props;
     const { questionsToggle } = this.state;
-    console.log(questionsToggle)
     
     return (
       <div className='container'>
@@ -80,7 +79,7 @@ function mapStateToProps({ questions, users, authedUser }) {
   const authedUserInfo = users[authedUser];
   const questionsSorted = Object.keys(questions)
     .sort((a,b) => questions[b].timestamp - questions[a].timestamp);
-  
+
     return {
     answeredQuestionsIds: questionsSorted
       .filter(question => question in authedUserInfo.answers),
