@@ -45,10 +45,9 @@ class NewQuestion extends Component {
 
   render() {
     const { optionOne, optionTwo, toHome } = this.state
-    console.log(this.state)
 
     if (toHome === true) {
-      return <Redirect to='/home' />
+      return <Redirect to='/' />
     }
 
     return (
@@ -61,26 +60,24 @@ class NewQuestion extends Component {
         <div className='new-question'>
           <p>Complete the question</p>
           <h4>Would you rather...</h4>
-          <form>
-            <input 
-              placeholder='Enter Option One Text Here'
-              value={optionOne}
-              name='optionOne'
-              onChange={this.handleChange} />
-            <h4 className='center'>OR</h4>
-            <input 
-              placeholder='Enter Option Two Text Here'
-              value={optionTwo}
-              name='optionTwo'
-              onChange={this.handleChange} />
-            <button 
-              className='btn'
-              onSubmit={this.handleSubmit}
-              disabled={optionOne === '' || optionTwo === ''}
-            >
-              Submit
-            </button>
-          </form>
+          <input 
+            placeholder='Enter Option One Text Here'
+            value={optionOne}
+            name='optionOne'
+            onChange={this.handleChange} />
+          <h4 className='center'>OR</h4>
+          <input 
+            placeholder='Enter Option Two Text Here'
+            value={optionTwo}
+            name='optionTwo'
+            onChange={this.handleChange} />
+          <button 
+            className='btn'
+            onClick={this.handleSubmit}
+            disabled={optionOne === '' || optionTwo === ''}
+          >
+            Submit
+          </button>
         </div>
       </div>
 
