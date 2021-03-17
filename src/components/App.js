@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom' 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom' 
 import { connect } from "react-redux";
 import { handleInitialData } from "../actions/shared";
 import NavBar from './NavBar';
@@ -7,6 +7,8 @@ import SignIn from './SignIn';
 import AuthedUserInfo from './AuthedUserInfo';
 import Home from './Home';
 import NewQuestion from './NewQuestion';
+import PrivateRoute from '../utils/PrivateRoute'
+import Leaderboard from './Leaderboard';
 
 class App extends Component {
 
@@ -15,7 +17,7 @@ class App extends Component {
   }
 
   render() {
-    const { authedUser } = this.props;
+    const { signedIn } = this.props;
 
     return (
       <Router>
@@ -28,19 +30,12 @@ class App extends Component {
             {/* TODO: This switch statement isn't working on refresh... */}
             <Switch>
               <div>
-                <Route path='/' render={() => {
-                  return (
-                    authedUser === null
-                      ? <Redirect to='/sign-in' />
-                      : <Redirect to='/home' />
-                  )
-                }} />
-                <Route path='/sign-in' exact component={SignIn} />
-                <Route path='/home' exact component={Home} />
-                {/* <Route path='/leaderboard' exact component={} /> */}
-                <Route path='/new-question' exact component={NewQuestion} />
+                <PrivateRoute path='/' exact component={Home} signedin={signedIn}/>
+                <PrivateRoute path='/add' exact component={NewQuestion} signedin={signedIn}/>
+                <PrivateRoute path='/leaderboard' exact component={Leaderboard} signedin={signedIn}/>
                 {/* <Route path='/question/:id' exact component={} /> */}
                 {/* <Route path='/answer/:id' exact component={} /> */}
+                <Route path='/sign-in' exact component={SignIn} />
               </div>
             </Switch>
           </div>
@@ -52,8 +47,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    users: state.users,
-    authedUser: state.authedUser}
+    signedIn: state.authedUser !== null}
   }
 
 export default connect(mapStateToProps)(App);
