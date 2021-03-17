@@ -31,12 +31,11 @@ class SignIn extends Component {
   }
 
   render() {
-    const { users, authedUser } = this.props;
+    const { users, signedIn } = this.props;
     const { selection } = this.state;
-    console.log(users)
 
-    if (authedUser !== null) {
-      return <Redirect to='/home' />
+    if (signedIn) {
+      return <Redirect to='/' />
     }
 
     return (
@@ -76,7 +75,7 @@ class SignIn extends Component {
 function mapStateToProps(state) {
   return {
       users: Object.keys(state.users),
-      authedUser: state.authedUser
+      signedIn: state.authedUser !== null
     }
 }
 
