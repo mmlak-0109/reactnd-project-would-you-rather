@@ -10,6 +10,12 @@ a {
   color: #252525;
 }
 
+.vl {
+  border-left: 2px solid #dad7d7;
+  height: 100%;
+  vertical-align: middle;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -115,7 +121,7 @@ li {
   margin: 10px;
 }
 
-.questions-list {
+.list-container {
   margin: 0 auto;
   padding: 10px;
   border: 2px solid #dad7d7;
@@ -174,4 +180,12 @@ input {
   padding: 10px;
   font-size: 15px;
   height: 100px;
+}
+
+.leaderboard-info {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  width:75%;
 }
