@@ -32,7 +32,7 @@ class Home extends Component {
     
     return (
       <div className='container'>
-        <div className='questions-list'>
+        <div className='list-container'>
           <div className='questions-toggle'>
             <button
               className='questions-toggle-btn'
