@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../actions/authedUser';
+import { FaSignOutAlt } from "react-icons/fa";
 
 class AuthedUserInfo extends Component {
 
@@ -33,11 +34,11 @@ class AuthedUserInfo extends Component {
             </img>
           </li>
           <li>
-            <a 
-              href='/sign-in'
-              onSubmit={this.handleSubmit}>
-                Logout
-            </a>
+            <button
+              onClick={this.handleSubmit}
+              className='logout-btn'>
+                <span>Logout</span>&nbsp;<FaSignOutAlt />
+            </button>
           </li>
         </ul>
       </div>
