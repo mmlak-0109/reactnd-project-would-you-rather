@@ -57,14 +57,14 @@ class Home extends Component {
             ? <ul>
                 {unansweredQuestionsIds.map(id => (
                   <li key={id}>
-                    <QuestionPreview id={id}/>
+                    <QuestionPreview id={id} toggle={questionsToggle}/>
                   </li>
                 ))}
               </ul>
             : <ul>
                 {answeredQuestionsIds.map(id => (
                   <li key={id}>
-                    <QuestionPreview id={id}/>
+                    <QuestionPreview id={id} toggle={questionsToggle}/>
                   </li>
                 ))}
               </ul>
