@@ -41,6 +41,7 @@ a {
 .logout-btn {
   display: flex;
   align-items: center;
+  background: #00b5d6;
 }
 
 .btn {
