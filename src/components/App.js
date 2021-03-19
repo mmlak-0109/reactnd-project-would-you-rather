@@ -9,7 +9,7 @@ import Home from './Home';
 import NewQuestion from './NewQuestion';
 import PrivateRoute from '../utils/PrivateRoute'
 import Leaderboard from './Leaderboard';
-import Question from './Question';
+import QuestionAnswer from './QuestionAnswer';
 
 class App extends Component {
 
@@ -34,7 +34,7 @@ class App extends Component {
                 <PrivateRoute path='/' exact component={Home} signedin={signedIn}/>
                 <PrivateRoute path='/add' exact component={NewQuestion} signedin={signedIn}/>
                 <PrivateRoute path='/leaderboard' exact component={Leaderboard} signedin={signedIn}/>
-                <Route path='/question/:id' exact component={Question} />
+                <Route path='/question/:id' exact component={QuestionAnswer} />
                 <Route path='/sign-in' exact component={SignIn} />
               </div>
             </Switch>
