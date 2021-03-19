@@ -1,19 +1,36 @@
 import { Component } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { formatQuestionPreview } from "../utils/helpers";
 
 
 class QuestionPreview extends Component {
+  state = {
+    isclicked: false
+  }
+
+  handleClick = (e) => {
+    e.preventDefault();
+
+    this.setState(prevState => ({
+      isclicked: !prevState.isclicked
+    }))
+  }
+
   render() {
-    const { question } = this.props;
+    const { question, toggle} = this.props;
+    const { isclicked } = this.state
 
     if (question === null) {
       return <p>Sorry, this question doesn't exist.</p>
     }
 
     const { id, name, avatar, title, text } = question;
+
+    if (isclicked) {
+      return <Redirect push to={`/question/${id}`} />
+    }
 
     return (
       <div className='question'>
@@ -28,7 +45,11 @@ class QuestionPreview extends Component {
           <h3>{name} asks:</h3>
           <h4>{title}</h4>
           <p>{text}...</p>
-          <button className='btn'>View Question</button>
+          <button className='btn' onClick={this.handleClick}>
+            {toggle === 'unanswered'
+              ? 'View Question'
+              : 'View Results'}
+          </button>
         </div>
       </div>
     )
