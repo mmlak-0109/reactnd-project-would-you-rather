@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { FaUserCircle } from "react-icons/fa";
 import { connect } from "react-redux";
 
 
@@ -11,11 +12,12 @@ class LeaderboardStats extends Component {
 
     return (
       <div className='question'>
-        <img
+        {/* <img
           className='avatar'
           src={avatarURL}
           alt='User Avatar'
-        />
+        /> */}
+          <FaUserCircle size="10em"/>
         <div className='leaderboard-info vl'>
           <div className='leaderboard-info'>
             <h3>{name}</h3>
@@ -23,12 +25,12 @@ class LeaderboardStats extends Component {
             <p>Questions Created: <span>{questionsTotal}</span></p>
           </div>
         </div>
-        <div className='center vl'>
+        <div className='vl'>
           <div className='leaderboard-info'>
             <h4>Score</h4>
           </div>
           <div className='leaderboard-info'>
-            <span>{totalScore}</span>
+            <span id='blue-circle'>{totalScore}</span>
           </div>
         </div>
       </div>
