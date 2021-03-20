@@ -5,14 +5,14 @@ import LeaderboardStats from "./LeaderboardStats";
 
 class Leaderboard extends Component {
   render() {
-    const { usersIds } = this.props;
+    const { leaderboardData } = this.props;
 
     return (
       <div className='container'>
         <ul className='list-container'>
-          {usersIds.map((userId) => (
-            <li key={userId}>
-              <LeaderboardStats id={userId} />
+          {leaderboardData.map((user, idx) => (
+            <li key={user.id}>
+              <LeaderboardStats userData={user} rankId={idx} />
             </li>
           ))}
         </ul>
@@ -22,8 +22,23 @@ class Leaderboard extends Component {
 }
 
 function mapStateToProps({ users }) {
+  const leaderboardData = Object.values(users)
+    .map(user => ({
+      id: user.id,
+      name: user.name,
+      avatarURL: user.avatarURL,
+      anwsersTotal: Object.keys(user.answers).length,
+      questionsTotal: user.questions.length,
+      get totalScore() {
+        return this.anwsersTotal + this.questionsTotal
+      }
+    }))
+    .sort((a,b) => b.totalScore - a.totalScore)
+    .slice(0, 3)
+
   return{
-    usersIds: Object.keys(users)
+    leaderboardData
   }
 }
+
 export default connect(mapStateToProps)(Leaderboard)
