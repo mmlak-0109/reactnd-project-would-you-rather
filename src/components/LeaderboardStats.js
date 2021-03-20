@@ -1,14 +1,13 @@
 import { Component } from "react";
-import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle, FaTrophy} from "react-icons/fa";
 import { connect } from "react-redux";
 
+const trophyColors = ['gold', 'silver', 'CD7F32'];
 
 class LeaderboardStats extends Component {
   render() {
-    const { name, avatarURL, answers, questions } = this.props.user;
-    const anwsersTotal = Object.keys(answers).length;
-    const questionsTotal = questions.length;
-    const totalScore = anwsersTotal + questionsTotal;
+    const { name, avatarURL, anwsersTotal, questionsTotal, totalScore } = this.props.userData;
+    const idx = this.props.rankId;
 
     return (
       <div className='question'>
@@ -18,12 +17,15 @@ class LeaderboardStats extends Component {
           alt='User Avatar'
         /> */}
           <FaUserCircle size="10em"/>
-        <div className='leaderboard-info vl'>
+        <div className='vl'>
           <div className='leaderboard-info'>
             <h3>{name}</h3>
             <p>Questions Answered: <span>{anwsersTotal}</span></p>
             <p>Questions Created: <span>{questionsTotal}</span></p>
           </div>
+        </div>
+        <div className='trophy'>
+          <FaTrophy size='3em' color={trophyColors[idx]} />
         </div>
         <div className='vl'>
           <div className='leaderboard-info'>
@@ -38,10 +40,4 @@ class LeaderboardStats extends Component {
   }
 }
 
-function mapStateToProps({ users }, { id }) {
-  return {
-    user: users[id]
-  }
-}
-
-export default connect(mapStateToProps)(LeaderboardStats)
+export default connect()(LeaderboardStats)
