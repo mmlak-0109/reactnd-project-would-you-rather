@@ -29,7 +29,13 @@ class QuestionPreview extends Component {
     const { id, name, avatar, title, text } = question;
 
     if (isclicked) {
-      return <Redirect push to={`/question/${id}`} />
+      return <Redirect 
+                push 
+                to={{
+                  pathname: `/question/${id}`,
+                  state: {toggle}
+                }}
+              />
     }
 
     return (
