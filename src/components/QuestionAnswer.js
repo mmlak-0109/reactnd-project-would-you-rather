@@ -6,9 +6,9 @@ import Results from "./Results";
 
 class QuestionAnswer extends Component {
   render() {
-    const { question } = this.props.question;
+    const { question } = this.props;
     const toggle = this.props.location.state.toggle;
-    console.log(toggle)
+
     return (
       <div>
         {toggle === 'unanswered'
