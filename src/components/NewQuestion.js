@@ -61,12 +61,14 @@ class NewQuestion extends Component {
           <p>Complete the question</p>
           <h4>Would you rather...</h4>
           <input 
+            className='input'
             placeholder='Enter Option One Text Here'
             value={optionOne}
             name='optionOne'
             onChange={this.handleChange} />
           <h4 className='center'>OR</h4>
           <input 
+            className='input'
             placeholder='Enter Option Two Text Here'
             value={optionTwo}
             name='optionTwo'
