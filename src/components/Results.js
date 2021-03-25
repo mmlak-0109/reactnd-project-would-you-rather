@@ -49,7 +49,7 @@ class Results extends Component {
     return (
       <div className='results-container'>
         <h2 className='center'>Results:</h2>
-        <div className='question'>
+        <div className='results'>
           {/* <img
             className='avatar'
             src={avatar}
@@ -57,8 +57,8 @@ class Results extends Component {
             width='50%'
           /> */}
             <FaUserCircle size='10em' />
-          <div className="results">
-            <div className='question-info'>
+          <div >
+            <div className='results-info'>
               <h3>{name} asked:</h3>
               <div>
                 <p>{title} {optionOneText}?</p>
@@ -70,7 +70,7 @@ class Results extends Component {
                 <p className='center'>{optionOneVotesLen} out of {totalVotes} Votes</p>
               </div>
             </div>
-            <div className='question-info'>
+            <div className='results-info'>
               <div>
                 <p>{title} {optionTwoText}?</p>
                 <div style={barContainer}>
@@ -78,7 +78,7 @@ class Results extends Component {
                     <span>{`${optionTwoVotesPct}%`}</span>
                   </div>
                 </div>
-                <p className='center'>{optionOneVotesLen} out of {totalVotes} Votes</p>
+                <p className='center'>{optionTwoVotesLen} out of {totalVotes} Votes</p>
               </div>
             </div>
           </div>
