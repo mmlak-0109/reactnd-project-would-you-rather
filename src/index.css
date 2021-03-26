@@ -43,6 +43,8 @@ a {
   display: flex;
   align-items: center;
   background: #00b5d6;
+  color: #fff;
+  font-weight: bold;
 }
 
 .btn {
@@ -148,6 +150,7 @@ li {
   border: 2px solid #dad7d7;
   border-radius: 3px;
   align-items: center;
+  justify-content: center;
 }
 
 .results-container {
@@ -155,6 +158,8 @@ li {
   max-width: 590px;
   margin: 0 auto;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .results {
@@ -174,9 +179,10 @@ li {
 }
 
 .results-info {
-  padding-left: 30px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
+  border: 2px solid #dad7d7;
 }
 
 .new-question {
@@ -237,4 +243,15 @@ li {
   justify-content: left;
   padding-bottom: 10px;
   cursor:default;
+}
+
+.your-selection {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border-style: dotted;
+  background-color: #00b5d6;
+  color: #fff;
+  font-weight: bold;
 }
