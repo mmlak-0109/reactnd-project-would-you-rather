@@ -6,20 +6,34 @@ import { formatQuestion } from "../utils/helpers";
 
 class Question extends Component {
   state = {
-    selected: ""
+    selected: "",
+    toHome: false
   }
 
   handleChange = (e) => {
-    e.preventDefault();
-
     this.setState({
-      selected: e.target.value
+      selected: e.currentTarget.value
     });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+
+    const { selected } = this.state
+    const { dispatch } = this.props
+
+    // dispatch(handleAddQuestion(optionOne, optionTwo))
+
+    this.setState(() => ({
+      selected: '',
+      toHome: true
+    }))
   }
 
   render() {
     const { id, name, avatar, title, optionOneText, optionTwoText} = this.props.question;
     const { selected } = this.state;
+    console.log(selected)
 
     return (
       <div className='question'>
@@ -37,21 +51,27 @@ class Question extends Component {
             <label className='radio-buttons'>
               <input 
                 type='radio'
+                name='choice'
                 value={optionOneText}
-                checked={selected === {optionOneText}}
-                onChange={this.handleChange}/>
+                onChange={this.handleChange}
+              />
               {optionOneText}
             </label>
             <label className='radio-buttons'>
               <input 
-                type='radio' 
+                type='radio'
+                name='choice' 
                 value={optionTwoText}
-                checked={selected === {optionTwoText}}
-                onChange={this.handleChange}/>
+                onChange={this.handleChange}
+              />
               {optionTwoText}
             </label>
           </div>
-          <button className='btn' onClick={this.handleClick}>
+          <button 
+            className='btn'
+            onClick={this.handleSubmit}
+            disabled={selected === ''}
+          >
             Submit
           </button>
         </div>
@@ -68,4 +88,5 @@ function mapStateToProps({ users, authedUser }, { questionInfo }) {
     question: formatQuestion(questionInfo, user)
   }
 }
+
 export default connect(mapStateToProps)(Question)
