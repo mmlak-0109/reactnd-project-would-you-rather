@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { FaUserCircle } from "react-icons/fa";
 import { connect } from "react-redux";
 import { Redirect } from "react-router";
 import { handleAddQuestionAnswer } from "../actions/questions";
@@ -51,13 +50,12 @@ class Question extends Component {
 
     return (
       <div className='question'>
-        {/* <img
+        <img
           className='avatar'
           src={avatar}
           alt='User Avatar'
           width='50%'
-        /> */}
-          <FaUserCircle size='10em' />
+        />
         <div className='question-info'>
           <h3>{name} asks:</h3>
           <h4>{title}</h4>
