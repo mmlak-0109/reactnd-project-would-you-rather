@@ -133,8 +133,14 @@ li {
 }
 
 .avatar {
-  height: 50px;
-  border-radius: 25px;
+  width: 50%;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.authed-user-avatar {
+  width: 10%;
+  border-radius: 50%;
   margin: 10px;
 }
 
