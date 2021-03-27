@@ -1,6 +1,8 @@
 import { Component } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import { connect } from "react-redux";
+import { Redirect } from "react-router";
+import { handleAddQuestionAnswer } from "../actions/questions";
 import { formatQuestion } from "../utils/helpers";
 
 
@@ -21,8 +23,11 @@ class Question extends Component {
 
     const { selected } = this.state
     const { dispatch } = this.props
+    const { id, optionOneText } = this.props.question
 
-    // dispatch(handleAddQuestion(optionOne, optionTwo))
+    const option = selected === optionOneText ? "optionOne" : "optionTwo"
+
+    dispatch(handleAddQuestionAnswer(id, option))
 
     this.setState(() => ({
       selected: '',
@@ -32,8 +37,17 @@ class Question extends Component {
 
   render() {
     const { id, name, avatar, title, optionOneText, optionTwoText} = this.props.question;
-    const { selected } = this.state;
-    console.log(selected)
+    const { selected, toHome } = this.state;
+
+    if (toHome === true) {
+      return <Redirect 
+                push 
+                to={{
+                  pathname: `/question/${id}`,
+                  state: 'answered'
+                }}
+              />
+    }
 
     return (
       <div className='question'>
