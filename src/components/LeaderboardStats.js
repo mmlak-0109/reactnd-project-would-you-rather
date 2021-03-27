@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { FaUserCircle, FaTrophy} from "react-icons/fa";
+import { FaTrophy } from "react-icons/fa";
 import { connect } from "react-redux";
 
 const trophyColors = ['gold', 'silver', '#CD7F32'];
@@ -11,12 +11,11 @@ class LeaderboardStats extends Component {
 
     return (
       <div className='question'>
-        {/* <img
+        <img
           className='avatar'
           src={avatarURL}
           alt='User Avatar'
-        /> */}
-          <FaUserCircle size="10em"/>
+        />
         <div className='vl'>
           <div className='leaderboard-info'>
             <h3>{name}</h3>
