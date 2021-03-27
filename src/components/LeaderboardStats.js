@@ -2,7 +2,7 @@ import { Component } from "react";
 import { FaUserCircle, FaTrophy} from "react-icons/fa";
 import { connect } from "react-redux";
 
-const trophyColors = ['gold', 'silver', 'CD7F32'];
+const trophyColors = ['gold', 'silver', '#CD7F32'];
 
 class LeaderboardStats extends Component {
   render() {
