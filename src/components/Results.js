@@ -22,8 +22,8 @@ class Results extends Component {
     const optionOneVotesLen = optionOneVotes.length;
     const optionTwoVotesLen = optionTwoVotes.length;
     const totalVotes = optionOneVotesLen + optionTwoVotesLen;
-    const optionOneVotesPct = (optionOneVotesLen/totalVotes)*100;
-    const optionTwoVotesPct = (optionTwoVotesLen/totalVotes)*100;
+    const optionOneVotesPct = Math.round((optionOneVotesLen/totalVotes)*100);
+    const optionTwoVotesPct = Math.round((optionTwoVotesLen/totalVotes)*100);
 
     const barContainer = {
       height: '100%',
