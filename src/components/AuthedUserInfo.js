@@ -25,10 +25,11 @@ class AuthedUserInfo extends Component {
       <div className='authed-user'>
         <ul>
           <li>
-            <span>Hello, {user.name} </span>
+            <span>Hello, {user.name}</span>
           </li>
           <li>
             <img 
+              className='authed-user-avatar'
               src={user.avatarURL}
               alt="User Avatar">
             </img>
