@@ -49,43 +49,44 @@ class Question extends Component {
     }
 
     return (
-      <div className='question'>
-        <img
-          className='avatar'
-          src={avatar}
-          alt='User Avatar'
-          width='50%'
-        />
-        <div className='question-info'>
-          <h3>{name} asks:</h3>
-          <h4>{title}</h4>
-          <div>
-            <label className='radio-buttons'>
-              <input 
-                type='radio'
-                name='choice'
-                value={optionOneText}
-                onChange={this.handleChange}
-              />
-              {optionOneText}
-            </label>
-            <label className='radio-buttons'>
-              <input 
-                type='radio'
-                name='choice' 
-                value={optionTwoText}
-                onChange={this.handleChange}
-              />
-              {optionTwoText}
-            </label>
+      <div className='container'>
+        <div className='question'>
+          <img
+            className='avatar'
+            src={avatar}
+            alt='User Avatar'
+          />
+          <div className='question-info'>
+            <h3>{name} asks:</h3>
+            <h4>{title}</h4>
+            <div>
+              <label className='radio-buttons'>
+                <input 
+                  type='radio'
+                  name='choice'
+                  value={optionOneText}
+                  onChange={this.handleChange}
+                />
+                {optionOneText}
+              </label>
+              <label className='radio-buttons'>
+                <input 
+                  type='radio'
+                  name='choice' 
+                  value={optionTwoText}
+                  onChange={this.handleChange}
+                />
+                {optionTwoText}
+              </label>
+            </div>
+            <button 
+              className='btn'
+              onClick={this.handleSubmit}
+              disabled={selected === ''}
+            >
+              Submit
+            </button>
           </div>
-          <button 
-            className='btn'
-            onClick={this.handleSubmit}
-            disabled={selected === ''}
-          >
-            Submit
-          </button>
         </div>
       </div>
     )
