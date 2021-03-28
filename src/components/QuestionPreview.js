@@ -1,7 +1,6 @@
 import { Component } from "react";
-import { FaUserCircle } from "react-icons/fa";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { formatQuestionPreview } from "../utils/helpers";
 
 
