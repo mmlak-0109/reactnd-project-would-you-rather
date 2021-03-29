@@ -37,6 +37,7 @@ class Question extends Component {
   render() {
     const { id, name, avatar, title, optionOneText, optionTwoText} = this.props.question;
     const { selected, toHome } = this.state;
+    const avatarSlash = `/${avatar}`;
 
     if (toHome === true) {
       return <Redirect 
@@ -53,7 +54,7 @@ class Question extends Component {
         <div className='question'>
           <img
             className='avatar'
-            src={avatar}
+            src={avatarSlash}
             alt='User Avatar'
           />
           <div className='question-info'>
