@@ -17,6 +17,13 @@ class AuthedUserInfo extends Component {
   render() {
     const { user } = this.props;
 
+    const authedUserImg = {
+      borderRadius: '50%',
+      backgroundImage: user === undefined ? 'none' : `url(/${user.avatarURL})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
+    }
+
     if (user === undefined) {
       return null
     }
@@ -25,14 +32,9 @@ class AuthedUserInfo extends Component {
       <div className='authed-user'>
         <ul>
           <li>
-            <span>Hello, {user.name}</span>
+            <span>{user.name}</span>
           </li>
-          <li>
-            <img 
-              className='authed-user-avatar'
-              src={user.avatarURL}
-              alt="User Avatar">
-            </img>
+          <li style={authedUserImg}>
           </li>
           <li>
             <button
