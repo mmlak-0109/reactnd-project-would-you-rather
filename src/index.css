@@ -97,13 +97,14 @@ a {
 
 .authed-user {
   width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .authed-user ul {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  text-decoration: none;
   align-items: center;
 }
 
@@ -133,13 +134,7 @@ li {
 }
 
 .avatar {
-  width: 50%;
-  border-radius: 50%;
-  margin: 10px;
-}
-
-.authed-user-avatar {
-  width: 10%;
+  width: 25%;
   border-radius: 50%;
   margin: 10px;
 }
@@ -163,7 +158,8 @@ li {
   border: 2px solid #dad7d7;
   border-radius: 3px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  max-width: 590px;
 }
 
 .results-container {
@@ -182,6 +178,8 @@ li {
   border: 2px solid #dad7d7;
   border-radius: 3px;
   align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .question-info {
@@ -267,25 +265,5 @@ li {
   background-color: #00b5d6;
   color: #fff;
   font-weight: bold;
-}
-
-.talkbubble {
-  width: 120px;
-  height: 80px;
-  background: #00b5d6;
-  position: relative;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-.talkbubble::before {
-  content: "";
-  position: absolute;
-  right: 100%;
-  top: 26px;
-  width: 0;
-  height: 0;
-  border-top: 13px solid transparent;
-  border-right: 26px solid #00b5d6;
-  border-bottom: 13px solid transparent;
+  background-size: ;
 }
