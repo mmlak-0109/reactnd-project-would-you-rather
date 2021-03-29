@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { FaUserCircle } from "react-icons/fa";
 import { connect } from "react-redux";
 import { formatResults } from "../utils/helpers";
 
@@ -7,7 +6,7 @@ import { formatResults } from "../utils/helpers";
 class Results extends Component {
   render() {
     const { 
-      id, 
+      // id, 
       name, 
       avatar, 
       title, 
@@ -67,17 +66,17 @@ class Results extends Component {
 
     const optionsList = ['optionOne', 'optionTwo']
 
+    const avatarSlash = `/${avatar}`;
+
     return (
       <div className='results-container'>
         <h2>Results:</h2>
         <div className='results'>
-          {/* <img
+          <img
             className='avatar'
-            src={avatar}
+            src={avatarSlash}
             alt='User Avatar'
-            width='50%'
-          /> */}
-            <FaUserCircle size='10em' />
+          />
           <div className='center'>
             <h3>{name} asked:</h3>
             <ul>
