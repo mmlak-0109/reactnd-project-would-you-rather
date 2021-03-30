@@ -28,7 +28,6 @@ class App extends Component {
               <NavBar />
               <AuthedUserInfo />
             </div>
-            {/* TODO: This switch statement isn't working on refresh... */}
             <Switch>
               <div>
                 <PrivateRoute path='/' exact component={Home} signedin={signedIn}/>
