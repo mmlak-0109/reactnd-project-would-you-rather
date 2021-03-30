@@ -10,7 +10,7 @@ class LeaderboardStats extends Component {
     const idx = this.props.rankId;
 
     return (
-      <div className='question'>
+      <div className='leaderboard'>
         <img
           className='avatar'
           src={avatarURL}
@@ -27,10 +27,8 @@ class LeaderboardStats extends Component {
           <FaTrophy size='3em' color={trophyColors[idx]} />
         </div>
         <div className='vl'>
-          <div className='leaderboard-info'>
+          <div className='leaderboard-score'>
             <h4>Score</h4>
-          </div>
-          <div className='leaderboard-info'>
             <span id='blue-circle'>{totalScore}</span>
           </div>
         </div>
