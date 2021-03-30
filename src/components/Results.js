@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { FaCheck } from "react-icons/fa";
 import { connect } from "react-redux";
 import { formatResults } from "../utils/helpers";
 
@@ -6,7 +7,6 @@ import { formatResults } from "../utils/helpers";
 class Results extends Component {
   render() {
     const { 
-      // id, 
       name, 
       avatar, 
       title, 
@@ -85,7 +85,9 @@ class Results extends Component {
                   <div className='results-info'>
                     <div>
                       {optionsObject[option].votes.includes(authedUser)
-                          ? <div className='your-selection'>Your Selection</div>
+                          ? <div className='your-selection'>
+                              <FaCheck />
+                            </div>
                           : null
                         }
                       <p>{title} {optionsObject[option].text}?</p>
