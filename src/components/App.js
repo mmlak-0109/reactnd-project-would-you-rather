@@ -10,6 +10,7 @@ import NewQuestion from './NewQuestion';
 import PrivateRoute from '../utils/PrivateRoute'
 import Leaderboard from './Leaderboard';
 import QuestionAnswer from './QuestionAnswer';
+import NoMatch from './NoMatch';
 
 class App extends Component {
 
@@ -35,6 +36,7 @@ class App extends Component {
                 <PrivateRoute path='/leaderboard' exact component={Leaderboard} signedin={signedIn}/>
                 <Route path='/question/:id' exact component={QuestionAnswer} />
                 <Route path='/sign-in' exact component={SignIn} />
+                <Route path='/no-match' exact component={NoMatch} />
               </div>
             </Switch>
           </div>
