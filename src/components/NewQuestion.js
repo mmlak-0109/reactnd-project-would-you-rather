@@ -53,11 +53,11 @@ class NewQuestion extends Component {
     return (
       <div className='container'>
         <div 
-          className='new-question center'
+          className='new-question-top center'
           id='header'>
           <h2>Create New Question</h2>
         </div>
-        <div className='new-question'>
+        <div className='new-question-bottom'>
           <p>Complete the question</p>
           <h4>Would you rather...</h4>
           <input 
