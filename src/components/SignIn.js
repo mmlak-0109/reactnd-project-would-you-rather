@@ -40,11 +40,11 @@ class SignIn extends Component {
 
     return (
       <div className='container center'>
-        <div className='sign-in'  id='header'>
+        <div className='sign-in-top'  id='header'>
           <h3>Welcome to the Would you Rather App!</h3>
           <p>Please sign in to continue</p>
         </div>
-        <div className='sign-in'>
+        <div className='sign-in-bottom'>
           <div>
             <FaUserCircle size="10em"/>
             <h2>Sign In</h2>
