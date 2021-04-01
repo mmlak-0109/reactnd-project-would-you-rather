@@ -1,12 +1,17 @@
-import { Redirect, Route } from "react-router";
+import { Component } from "react";
+import { Redirect, Route, withRouter } from "react-router";
 
 
-export default function PrivateRoute(props) {
-  const { path, exact, component: Component, signedin } = props;
-
-  return (
-    <Route exact={exact} path={path}>
-      {signedin ? <Component /> : <Redirect to='/sign-in' />}
-    </Route>
-  )
+class PrivateRoute extends Component {
+  render() {
+    const { path, exact, component, signedin } = this.props;
+    
+    if (signedin) {
+      return <Route exact={exact} path={path} component={component} />
+    } else {
+      return <Redirect to='/sign-in' />
+    }
+  }
 }
+
+export default withRouter(PrivateRoute)
