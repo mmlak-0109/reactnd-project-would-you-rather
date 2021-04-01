@@ -31,10 +31,10 @@ class App extends Component {
             </div>
             <Switch>
               <div>
-                <PrivateRoute path='/' exact component={Home} signedin={signedIn}/>
-                <PrivateRoute path='/add' exact component={NewQuestion} signedin={signedIn}/>
-                <PrivateRoute path='/leaderboard' exact component={Leaderboard} signedin={signedIn}/>
-                <Route path='/question/:id' exact component={QuestionAnswer} />
+                <PrivateRoute path='/' exact component={Home} signedin={signedIn} />
+                <PrivateRoute path='/add' exact component={NewQuestion} signedin={signedIn} />
+                <PrivateRoute path='/leaderboard' exact component={Leaderboard} signedin={signedIn} />
+                <PrivateRoute path='/question/:id' exact component={QuestionAnswer} signedin={signedIn} />
                 <Route path='/sign-in' exact component={SignIn} />
                 <Route path='/no-match' exact component={NoMatch} />
               </div>
