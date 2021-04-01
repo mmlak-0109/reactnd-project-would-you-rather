@@ -7,8 +7,6 @@ import { Redirect } from "react-router";
 
 class QuestionAnswer extends Component {
   render() {
-
-    
     const { question } = this.props;
 
     if (this.props.location.state === undefined
