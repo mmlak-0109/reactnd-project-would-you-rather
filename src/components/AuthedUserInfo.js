@@ -21,7 +21,8 @@ class AuthedUserInfo extends Component {
       borderRadius: '50%',
       backgroundImage: user === undefined ? 'none' : `url(/${user.avatarURL})`,
       backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover'
+      backgroundSize: 'cover',
+      border: '2px solid #dad7d7'
     }
 
     if (user === undefined) {
