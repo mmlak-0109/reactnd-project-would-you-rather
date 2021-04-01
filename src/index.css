@@ -54,6 +54,7 @@ a {
 
 .sign-in-top {
   border-radius: 10px 10px 0px 0px;
+  background-color: #f3f4f5;
 }
 
 .sign-in-bottom {
@@ -149,22 +150,23 @@ li {
   width: 25%;
   border-radius: 50%;
   margin: 10px;
+  border: 2px solid #dad7d7;
 }
 
 .list-container {
   margin: 0 auto;
-  padding: 10px;
   border: 2px solid #dad7d7;
   max-width: 600px;
 }
 
 .questions-toggle {
-  padding: 10px;
-  border-bottom: 2px solid #dad7d7;;
+  padding: 10px 10px 10px 10px;
+  border-bottom: 2px solid #dad7d7;
+  background-color: #f3f4f5;
 }
 
 .question {
-  padding: 10px;
+  padding: 0px 10px 0px 0px;
   display: flex;
   margin: 0 auto;
   border: 2px solid #dad7d7;
@@ -175,7 +177,7 @@ li {
 }
 
 .question-info {
-  padding-left: 30px;
+  padding-left: 10px;
   display: flex;
   flex-direction: column;
   width: 75%;
@@ -194,16 +196,15 @@ li {
 
 .new-question-top {
   border-radius: 10px 10px 0px 0px;
+  background-color: #f3f4f5;
 }
 
 .new-question-bottom {
   border-radius: 0px 0px 10px 10px;
 }
 
-
 .results-container {
-  padding: 10px;
-  max-width: 590px;
+  max-width: 470px;
   margin: 0 auto;
   align-items: center;
   display: flex;
@@ -211,12 +212,10 @@ li {
 }
 
 .results {
-  padding: 10px;
   display: flex;
   margin: 0 auto;
   border: 2px solid #dad7d7;
   align-items: center;
-  justify-content: space-evenly;
   width: 100%;
 }
 
@@ -226,6 +225,7 @@ li {
   flex-direction: column;
   border: 2px solid #dad7d7;
   width: 100%;
+  border-radius: 10px;
 }
 
 #header {
@@ -320,14 +320,15 @@ button {
   border-radius: 10px;
 }
 
-.list-container {
-  box-shadow: 1px 1px 5px ;
+/* .list-container {
+  box-shadow: 0px 0px 1px ;
 }
 
 .question,
 .results-container,
 .results,
 .leaderboard,
-button:hover {
-  box-shadow: 1px 1px 10px ;
-}
+.btn:hover, 
+.questions-toggle-btn {
+  box-shadow: 0px 0px 2px ;
+} */
