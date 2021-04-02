@@ -69,8 +69,8 @@ class Results extends Component {
     const avatarSlash = `/${avatar}`;
 
     return (
-      <div className='results-container'>
-        <h2>Results:</h2>
+      <div className='container'>
+        {/* <h2>Results:</h2> */}
         <div className='results'>
           <img
             className='avatar'
