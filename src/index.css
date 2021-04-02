@@ -53,13 +53,14 @@ li {
 .questions-toggle-btn {
   width: 50%;
   cursor: pointer;
-  box-shadow: 2px 2px 2px;
+  box-shadow: 2px 2px 2px ;
 }
 
 .questions-toggle-btn:disabled {
   background: #00b5d6;
   color: #fff;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 .logout-btn {
@@ -73,13 +74,6 @@ li {
 
 .login-btn {
   display: inline-block;
-}
-
-.btn,
-.questions-toggle-btn,
-.logout-btn,
-.login-btn {
-  box-shadow: 2px 2px 2px ;
 }
 
 .vl {
