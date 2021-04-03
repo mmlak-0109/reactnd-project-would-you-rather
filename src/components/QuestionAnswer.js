@@ -11,7 +11,7 @@ class QuestionAnswer extends Component {
 
     if (this.props.location.state === undefined
         || question === undefined) {
-      return <Redirect to='/no-match' />
+      return <Redirect push to='/no-match' />
     }
 
     const toggle = this.props.location.state.toggle;
