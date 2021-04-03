@@ -31,7 +31,7 @@ class SignIn extends Component {
   }
 
   render() {
-    const { users, signedIn } = this.props;
+    const { userIds, users, signedIn } = this.props;
     const { selection } = this.state;
 
     if (signedIn) {
@@ -46,7 +46,13 @@ class SignIn extends Component {
         </div>
         <div className='sign-in-bottom'>
           <div>
-            <FaUserCircle size="10em"/>
+            {selection === 'Select a User...'
+              ? <FaUserCircle size="10em"/>
+              : <img
+                  className='avatar'
+                  src={users[selection].avatarURL}
+                  alt='User Avatar'
+                />}
             <h2>Sign In</h2>
           </div>
           <div>
@@ -56,7 +62,7 @@ class SignIn extends Component {
                 value={selection}
                 onChange={this.handleChange}>
                 <option key='default'>Select a User...</option>
-                {users.map((user) => (
+                {userIds.map((user) => (
                   <option key={user}>{user}</option>
                 ))}
               </select>
@@ -74,7 +80,8 @@ class SignIn extends Component {
 
 function mapStateToProps(state) {
   return {
-      users: Object.keys(state.users),
+      userIds: Object.keys(state.users),
+      users: state.users,
       signedIn: state.authedUser !== null
     }
 }
