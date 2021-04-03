@@ -11,6 +11,7 @@ import PrivateRoute from '../utils/PrivateRoute'
 import Leaderboard from './Leaderboard';
 import QuestionAnswer from './QuestionAnswer';
 import NoMatch from './NoMatch';
+import LoadingBar from 'react-redux-loading-bar'
 
 class App extends Component {
 
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <Router>
         <Fragment>
+          <LoadingBar />
           <div className='container'>
             <div className='nav-authedUser'>
               <NavBar />
@@ -48,7 +50,9 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    signedIn: state.authedUser !== null}
+    signedIn: state.authedUser !== null,
+    loading: state.loadingBar.default === 1,
   }
+}
 
 export default connect(mapStateToProps)(App);
