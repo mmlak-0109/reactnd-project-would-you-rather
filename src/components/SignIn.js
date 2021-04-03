@@ -35,7 +35,7 @@ class SignIn extends Component {
     const { selection } = this.state;
 
     if (signedIn) {
-      return <Redirect to='/' />
+      return <Redirect push to='/' />
     }
 
     return (
