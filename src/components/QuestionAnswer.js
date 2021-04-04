@@ -7,30 +7,31 @@ import { Redirect } from "react-router";
 
 class QuestionAnswer extends Component {
   render() {
-    const { question } = this.props;
+    const { question, questionAnswered } = this.props;
 
     if (this.props.location.state === undefined
         || question === undefined) {
       return <Redirect push to='/no-match' />
     }
-
-    const toggle = this.props.location.state.toggle;
-
+    
     return (
       <div>
-        {toggle === 'unanswered'
-          ? <Question questionInfo={question}/>
-          : <Results questionInfo={question}/>}
+        {questionAnswered
+          ? <Results questionInfo={question}/>
+          : <Question questionInfo={question}/>}
       </div>
     )
   }
 }
 
-function mapStateToProps({ questions }, props) {
+function mapStateToProps({ users, questions, authedUser }, props) {
   const { id } = props.match.params;
+  const question = questions[id];
+  const questionAnswered = Object.keys(users[authedUser].answers).includes(id)
 
   return{
-    question: questions[id],
+    question,
+    questionAnswered
   }
 }
 
