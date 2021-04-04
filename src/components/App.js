@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   render() {
-    const { signedIn } = this.props;
+    const { signedIn, loading } = this.props;
 
     return (
       <Router>
@@ -31,16 +31,19 @@ class App extends Component {
               <NavBar />
               <AuthedUserInfo />
             </div>
-            <Switch>
-              <div>
-                <PrivateRoute path='/' exact component={Home} signedin={signedIn} />
-                <PrivateRoute path='/add' exact component={NewQuestion} signedin={signedIn} />
-                <PrivateRoute path='/leaderboard' exact component={Leaderboard} signedin={signedIn} />
-                <PrivateRoute path='/question/:id' exact component={QuestionAnswer} signedin={signedIn} />
-                <Route path='/sign-in' exact component={SignIn} />
-                <Route path='/no-match' exact component={NoMatch} />
-              </div>
-            </Switch>
+            {loading
+              ? null
+              : <Switch>
+                  <div>
+                    <PrivateRoute path='/' exact component={Home} signedin={signedIn} />
+                    <PrivateRoute path='/add' exact component={NewQuestion} signedin={signedIn} />
+                    <PrivateRoute path='/leaderboard' exact component={Leaderboard} signedin={signedIn} />
+                    <PrivateRoute path='/question/:id' exact component={QuestionAnswer} signedin={signedIn} />
+                    <Route path='/sign-in' exact component={SignIn} />
+                    <Route path='/no-match' exact component={NoMatch} />
+                  </div>
+                </Switch>
+            }
           </div>
         </Fragment>
       </Router>
