@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router";
 import { handleAddQuestion } from "../actions/questions";
 
 
@@ -8,7 +7,6 @@ class NewQuestion extends Component {
   state = {
     optionOne: '',
     optionTwo: '',
-    toHome: false
   }
 
   handleChange = (e) => {
@@ -32,7 +30,7 @@ class NewQuestion extends Component {
     e.preventDefault()
 
     const { optionOne, optionTwo } = this.state
-    const { dispatch } = this.props
+    const { dispatch, history } = this.props
 
     dispatch(handleAddQuestion(optionOne, optionTwo))
 
@@ -41,14 +39,12 @@ class NewQuestion extends Component {
       optionTwo: '',
       toHome: true
     }))
+
+    history.push('/')
   }
 
   render() {
-    const { optionOne, optionTwo, toHome } = this.state
-
-    if (toHome === true) {
-      return <Redirect push to='/' />
-    }
+    const { optionOne, optionTwo } = this.state
 
     return (
       <div className='container'>
