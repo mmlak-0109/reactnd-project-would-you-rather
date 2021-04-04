@@ -1,6 +1,5 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router";
 import { handleAddQuestionAnswer } from "../actions/questions";
 import { formatQuestion } from "../utils/helpers";
 
@@ -8,7 +7,6 @@ import { formatQuestion } from "../utils/helpers";
 class Question extends Component {
   state = {
     selected: "",
-    toHome: false
   }
 
   handleChange = (e) => {
@@ -21,7 +19,7 @@ class Question extends Component {
     e.preventDefault()
 
     const { selected } = this.state
-    const { dispatch } = this.props
+    const { dispatch} = this.props
     const { id, optionOneText } = this.props.question
 
     const option = selected === optionOneText ? "optionOne" : "optionTwo"
@@ -35,19 +33,9 @@ class Question extends Component {
   }
 
   render() {
-    const { id, name, avatar, title, optionOneText, optionTwoText} = this.props.question;
-    const { selected, toHome } = this.state;
+    const { name, avatar, title, optionOneText, optionTwoText} = this.props.question;
+    const { selected } = this.state;
     const avatarSlash = `/${avatar}`;
-
-    if (toHome === true) {
-      return <Redirect 
-                push 
-                to={{
-                  pathname: `/question/${id}`,
-                  state: 'answered'
-                }}
-              />
-    }
 
     return (
       <div className='container'>
