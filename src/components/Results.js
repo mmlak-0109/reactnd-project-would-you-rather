@@ -70,7 +70,6 @@ class Results extends Component {
 
     return (
       <div className='container'>
-        {/* <h2>Results:</h2> */}
         <div className='results'>
           <img
             className='avatar'
@@ -86,7 +85,7 @@ class Results extends Component {
                     <div>
                       {optionsObject[option].votes.includes(authedUser)
                           ? <div className='your-selection'>
-                              <FaCheck />
+                              <FaCheck /> Your Selection
                             </div>
                           : null
                         }
