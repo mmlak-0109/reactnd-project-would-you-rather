@@ -76,7 +76,7 @@ class Results extends Component {
             src={avatarSlash}
             alt='User Avatar'
           />
-          <div className='center'>
+          <div className='results-info-parent center'>
             <h3>{name} asked:</h3>
             <ul>
               {optionsList.map(option => (
