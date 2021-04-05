@@ -15,6 +15,8 @@ class QuestionPreview extends Component {
     this.setState(prevState => ({
       isclicked: !prevState.isclicked
     }))
+
+
   }
 
   render() {
@@ -30,10 +32,7 @@ class QuestionPreview extends Component {
     if (isclicked) {
       return <Redirect 
                 push 
-                to={{
-                  pathname: `/question/${id}`,
-                  state: {toggle}
-                }}
+                to={`/question/${id}`}
               />
     }
 
