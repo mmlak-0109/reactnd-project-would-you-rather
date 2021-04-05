@@ -82,7 +82,8 @@ button {
 }
 
 .avatar {
-  width: 25%;
+  min-width: 25%;
+  max-width: 25%;
   border-radius: 50%;
   margin: 10px;
   border: 2px solid #dad7d7;
@@ -117,7 +118,7 @@ button {
   padding: 10px;
   cursor: pointer;
   background: #fff;
-  width: 450px;
+  width: 100%;
   position: relative;
 }
 
@@ -193,7 +194,7 @@ button {
 
 .questions-toggle-btn:disabled {
   background: #00b5d6;
-  color: #fff;
+  color: rgb(175, 149, 149);
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -223,7 +224,6 @@ button {
 
 .new-question-top,
 .new-question-bottom  {
-  width: 100%;
   max-width: 590px;
   margin: 0 auto;
   padding: 10px;
@@ -258,12 +258,15 @@ button {
   max-width: 590px;
 }
 
+.results-info-parent {
+  width: 100%;
+}
+
 .results-info {
   padding: 10px;
   display: flex;
   flex-direction: column;
   border: 2px solid #dad7d7;
-  width: 100%;
   border-radius: 10px;
   box-sizing: border-box;
 }
@@ -304,18 +307,18 @@ button {
   display: flex;
   border: 2px solid #dad7d7;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   max-width: 590px;
 }
 
 .leaderboard-info {
-  margin: 10px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
 }
 
 .leaderboard-score {
-  margin: 10px;
+  padding: 10px 10px 10px 20px;
   display: flex;
   flex-direction: column;
 }
@@ -331,7 +334,7 @@ button {
 }
 
 .trophy {
-  margin: 10px;
+  padding: 10px;
   display: flex;
 }
 
