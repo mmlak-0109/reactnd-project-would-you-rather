@@ -47,7 +47,7 @@ class SignIn extends Component {
         <div className='sign-in-bottom'>
           <div>
             {selection === 'Select a User...'
-              ? <FaUserCircle size="10em"/>
+              ? <FaUserCircle size="10em" />
               : <img
                   className='avatar'
                   src={users[selection].avatarURL}
