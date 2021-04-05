@@ -25,3 +25,6 @@ Finally, once all of the dependencies have been installed you can launch the dev
 ### ```npm start```  or  ```yarn start```
 
 A new browser window should automatically open displaying the app.  If it doesn't, navigate to [http://localhost:3000/](http://localhost:3000/) in your browser.
+
+## Attributions
+<a href="https://www.freepik.com/free-vector/decorative-social-media-business-blog-users-profile-avatar-trendy-hairstyle-design-icons-collection-isolated-flat-vector-illustration_1158625.htm#page=1&query=user%20icons&position=15">Avatars used for the game's users were created by macrovector - www.freepik.com</a>
