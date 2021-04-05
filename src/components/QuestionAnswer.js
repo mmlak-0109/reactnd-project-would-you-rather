@@ -9,11 +9,10 @@ class QuestionAnswer extends Component {
   render() {
     const { question, questionAnswered } = this.props;
 
-    if (this.props.location.state === undefined
-        || question === undefined) {
+    if (question === undefined) { 
       return <Redirect push to='/no-match' />
     }
-    
+
     return (
       <div>
         {questionAnswered
